@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>AjayApp</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+  <app-root></app-root>
+</body>
+<script>
+  
+    var addbox='<div class="row control"><div class="col-md-1 offset-md-1"><div class="form-group"><label for="planLength"><b>Length</b></label></div></div><div class="col-md-3"><input type="text" name="planLength[]" class="form-control planLength"></div><div class="col-md-1"><div class="form-group"><label for="planQty"><b>Quantity</b></label></div></div><div class="col-md-3"> <input type="text" name="planQty" id="planQty" class="form-control"></div><div class="col-md-1"><button class="btn btn-primary" id="removebutton">Remove</button></div> </div>'
+  $(document).ready(function(){
+  console.log("ad")
+    $("#addbutton").click(function(){
+      console.log("ajja")
+  
+  $(".input").append(addbox)
+  
+    });
+
+    $(document).on('click','#removebutton',function(){
+
+    
+     $(this).closest(".control").remove();
+    });
+
+    $(document).on('click','#submit',function(){
+
+ var data= $(".planLength");
+ var ds=data.length;
+ $.each(data,function(i,ele){
+
+  console.log(data[i].value)
+ });
+
+    });
+  });
+  </script>
+</html>
+
